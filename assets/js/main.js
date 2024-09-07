@@ -265,5 +265,16 @@
    * Initiate Pure Counter 
    */
   new PureCounter();
+function createSnowflake() {
+  const snowflake = document.createElement('div');
+  snowflake.className = 'snowflake';
+  snowflake.style.left = Math.random() * 100 + 'vw';
+  snowflake.style.animationDuration = 2 + Math.random() * 4 + 's'; //
+  snowflake.style.animationDelay = Math.random() * 1 + 's'; //
+  snowflake.style.opacity = Math.random() * 0.7 + 0.3;
+  document.body.appendChild(snowflake);
 
+  setTimeout(() => {
+      snowflake.remove();
+}, (parseFloat(snowflake.style.animationDuration) + parseFloat(snowflake.style.animationDelay)) * 1000);}
 })()
